@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes([
+    'register' => false,
+]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route Admin
+Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    });
+});
+
+// Route Branch
+Route::group(['prefix' => 'branch', 'middleware' => ['branch']], function () {
+    Route::get('/', function () {
+        return view('branch.dashboard');
+    });
+});
