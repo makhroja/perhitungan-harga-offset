@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Auth::routes([
@@ -33,4 +33,9 @@ Route::group(['prefix' => 'branch', 'middleware' => ['branch']], function () {
     Route::get('/', function () {
         return view('branch.dashboard');
     });
+});
+
+
+Route::get('/draft', function () {
+    return view('draft');
 });
