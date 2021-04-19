@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Abata Printing Group</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
         content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,6 +17,10 @@
         href="{{ asset('/shards-dashboard/styles/shards-dashboards.1.1.0.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/shards-dashboard/styles/extras.1.1.0.min.css') }}">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- DataTable -->
+    <link rel="stylesheet" href="{{url('/assets/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{url('/assets/css/responsive.bootstrap4.min.css') }}">
 </head>
 
 <body class="h-100">
@@ -68,9 +73,13 @@
             </main>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <!-- DataTables -->
+    <script src="{{url('/assets/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{url('/assets/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{url('/assets/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{url('/assets/js/responsive.bootstrap4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
@@ -82,6 +91,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="{{ asset('/shards-dashboard/scripts/extras.1.1.0.min.js') }}"></script>
     <script src="{{ asset('/shards-dashboard/scripts/shards-dashboards.1.1.0.min.js') }}"></script>
+    @stack('js')
 </body>
 
 </html>

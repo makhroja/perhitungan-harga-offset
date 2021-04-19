@@ -38,12 +38,15 @@
                     <span>History Branch</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                    <i class="material-icons">view_module</i>
-                    <span>Menu</span>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                  <i class="material-icons">view_module</i>
+                  <span>Menu</span>
                 </a>
-            </li>
+                <div class="dropdown-menu dropdown-menu-small">
+                  <a class="dropdown-item " href="{{url('/admin/banner')}}">Banner</a>
+                </div>
+              </li>
             <li class="nav-item">
                 <a class="nav-link " href="add-new-post.html">
                     <i class="material-icons">note_add</i>
